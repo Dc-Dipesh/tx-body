@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted: #737373;
+  --primary: #408672;
+  --secondary: #1a1a1a;
+  --destructive: #e00;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-destructive: var(--destructive);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Swiper styles for better mousewheel control */
+.mySwiper {
+  height: 100vh !important;
+  width: 100% !important;
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Pagination bullets styling */
+.mySwiper .swiper-pagination-bullet {
+  background: var(--foreground);
+  opacity: 0.5;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--foreground);
 }
