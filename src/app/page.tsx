@@ -6,38 +6,52 @@ import "swiper/css/pagination";
 // import required modules
 import { Mousewheel, Pagination } from "swiper/modules";
 import ProductSection from "@/components/product-section";
+import ProposalSection from "@/components/proposal-section";
+import Footer from "@/components/footer";
+import { useRef } from "react";
+import type { SwiperRef } from "swiper/react";
+
 export default function Home() {
+  const swiperRef = useRef<SwiperRef | null>(null);
+
+  const goToTop = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideTo(0);
+    }
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    <Swiper
-      direction={"vertical"}
-      slidesPerView={1}
-      spaceBetween={0}
-      mousewheel={{
-        enabled: true,
-        sensitivity: 1,
-      }}
-      pagination={{
-        clickable: true,
-        dynamicBullets: true,
-      }}
-      modules={[Mousewheel, Pagination]}
-      className="mySwiper"
-    >
-      <SwiperSlide>
-        <div className="container mx-auto">
-          <HeroSection />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductSection />
-      </SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 8</SwiperSlide>
-      <SwiperSlide>Slide 9</SwiperSlide>
-    </Swiper>
+    <div className="overflow-auto relative">
+      <Swiper
+        ref={swiperRef}
+        direction={"vertical"}
+        slidesPerView={1}
+        spaceBetween={0}
+        mousewheel={{
+          enabled: true,
+          sensitivity: 1,
+        }}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        modules={[Mousewheel, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="container mx-auto">
+            <HeroSection />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductSection />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProposalSection />
+        </SwiperSlide>
+      </Swiper>
+      <Footer onBackToTop={goToTop} />
+    </div>
   );
 }

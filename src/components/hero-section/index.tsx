@@ -39,7 +39,7 @@ const HeroSection = () => {
         <div className="flex-1"></div>
         <div className="h-2/5 flex flex-col justify-between">
           <div>
-            <h1 className="max-w-[600px] text-6xl text-center font-medium">
+            <h1 className="max-w-[600px] text-4xl md:text-6xl text-center font-medium">
               Building tools for a decentralized world.
             </h1>
             <p className="max-w-[600px] text-center text-xl mt-4 text-muted">
@@ -54,7 +54,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="text-sm flex items-center gap-4"
+              className="text-sm flex items-center gap-2 md:gap-4"
             >
               VIEW ON GITHUB <ArrowUpRightIcon size={"18"} />
             </Button>
