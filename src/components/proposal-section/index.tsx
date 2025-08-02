@@ -27,8 +27,8 @@ const ProposalSection = () => {
     },
   ];
   return (
-    <div className="container mx-auto h-full w-full px-2  ">
-      <div className="flex flex-col justify-center h-full  z-10 relative overflow-y-clip">
+    <div className="container mx-auto h-full w-full px-2 ">
+      <div className="flex flex-col justify-center h-full  z-10 relative overflow-y-clip pt-10">
         <Image
           src="/proposal-bg.png"
           alt="proposal Background"
@@ -72,9 +72,9 @@ const ProposalCard = ({
     <div className="flex flex-col gap-2 md:gap-4 md:flex-row justify-between md:items-center border-b-2 border-[#404040]/25 py-5 md:py-10 ">
       <h3 className="text-xl font-semibold flex-1">{name}</h3>
       <p className="text-muted flex-1 md:text-center">{description}</p>
-      <div className="flex-1 flex md:justify-end">
-        <Button variant={"outline"} size={"lg"} asChild>
-          <Link href={link} className="flexitems-center gap-2">
+      <div className="flex-1 flex justify-end">
+        <Button variant={"outline"} size={"lg"} asChild className="z-20">
+          <Link href={link} className="flex items-center gap-2">
             READ MORE <ArrowUpRightIcon size={"18"} />
           </Link>
         </Button>

@@ -65,7 +65,7 @@ const HeroSection = () => {
             Trusted by over three million developers and teams
           </p>
           {/* <Marquee pauseOnHover className="[--duration:5s] gap-5"> */}
-          <div className="flex gap-5 opacity-25">
+          <div className="flex gap-5 opacity-25 flex-wrap justify-center">
             {clients.map((client) => (
               <Image
                 key={client.name}

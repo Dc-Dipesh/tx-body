@@ -57,7 +57,11 @@ const ProductSection = () => {
                   />
                 ))}
               </div>
-              <Button variant="outline" size="lg" className="mt-10 text-sm">
+              <Button
+                variant="outline"
+                size="lg"
+                className="mt-10 z-20 text-sm relative"
+              >
                 VIEW ON GITHUB <ArrowUpRightIcon size={"18"} />
               </Button>
             </div>

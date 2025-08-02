@@ -34,7 +34,10 @@ export default function Home() {
         }}
         pagination={{
           clickable: true,
-          dynamicBullets: true,
+          dynamicBullets: false,
+          renderBullet: function (index, className) {
+            return `<span class="${className}" data-index="${index}"></span>`;
+          },
         }}
         modules={[Mousewheel, Pagination]}
         className="mySwiper"

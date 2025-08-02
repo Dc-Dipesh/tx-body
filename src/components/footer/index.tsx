@@ -2,6 +2,7 @@ import { ArrowUpRightIcon, CaretUpIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 interface FooterProps {
   onBackToTop?: () => void;
@@ -21,7 +22,7 @@ const Footer = ({ onBackToTop }: FooterProps) => {
     { name: "X(Twitter)", link: "#" },
   ];
   return (
-    <div className="container mx-auto px-2 ">
+    <div className="container mx-auto px-2 relative overflow-hidden">
       <div className="py-20">
         <p className="uppercase">[ CONTACT ]</p>
 
@@ -56,11 +57,23 @@ const Footer = ({ onBackToTop }: FooterProps) => {
           <p>Built with ❤️ for the Elixir community.</p>
         </div>
         <div>
-          <Button variant={"ghost"} size={"lg"} onClick={onBackToTop}>
+          <Button
+            variant={"ghost"}
+            size={"lg"}
+            onClick={onBackToTop}
+            className="z-10! relative"
+          >
             Back to top <CaretUpIcon size={"18"} />
           </Button>
         </div>
       </div>
+      <Image
+        src="/footer-bg.png"
+        alt="Footer Background"
+        width={1920}
+        height={300}
+        className="z-0 absolute -bottom-1/2 left-0 w-full h-auto object-cover"
+      />
     </div>
   );
 };
