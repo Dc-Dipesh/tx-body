@@ -54,7 +54,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="text-sm flex items-center gap-2 md:gap-4"
+              className="text-sm flex items-center gap-2 md:gap-4 hover:bg-outline-hover"
             >
               VIEW ON GITHUB <ArrowUpRightIcon size={"18"} />
             </Button>

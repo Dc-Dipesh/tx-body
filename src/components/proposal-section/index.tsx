@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "../ui/button";
+import SutraSDKDialog from "./sutra-sdk-dialog";
 
 const ProposalSection = () => {
   const proposalData = [
@@ -9,6 +9,7 @@ const ProposalSection = () => {
       name: "Sutra SDK",
       description: "Lightweight governance tooling for Cardano",
       link: "#sutra-sdk",
+      components: <SutraSDKDialog />,
     },
     {
       name: "On-chain Voting UI Kit",
@@ -48,7 +49,7 @@ const ProposalSection = () => {
               key={index}
               name={proposal.name}
               description={proposal.description}
-              link={proposal.link}
+              components={proposal.components}
             />
           ))}
         </div>
@@ -62,22 +63,24 @@ export default ProposalSection;
 const ProposalCard = ({
   name,
   description,
-  link,
+  components,
 }: {
   name: string;
   description: string;
-  link: string;
+  components?: React.ReactNode;
 }) => {
   return (
     <div className="flex flex-col gap-2 md:gap-4 md:flex-row justify-between md:items-center border-b-2 border-[#404040]/25 py-5 md:py-10 ">
       <h3 className="text-xl font-semibold flex-1">{name}</h3>
       <p className="text-muted flex-1 md:text-center">{description}</p>
       <div className="flex-1 flex justify-end">
-        <Button variant={"outline"} size={"lg"} asChild className="z-20">
-          <Link href={link} className="flex items-center gap-2">
+        {components ? (
+          components
+        ) : (
+          <Button variant={"outline"} size={"lg"} className="z-20">
             READ MORE <ArrowUpRightIcon size={"18"} />
-          </Link>
-        </Button>
+          </Button>
+        )}
       </div>
     </div>
   );

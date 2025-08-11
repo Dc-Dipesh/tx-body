@@ -40,7 +40,7 @@ const ProductSection = () => {
               alt="Product Background"
               fill
               sizes="100vw"
-              className="object-cover z-0"
+              className="object-contain z-0"
             />
             <p className="mt-4 md:mt-8 text-muted max-w-[876px] text-center text-base md:text-xl">
               Lightweight developer SDK for building governance-enabled dApps on
