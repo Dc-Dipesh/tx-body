@@ -31,7 +31,7 @@ const ProposalSection = () => {
     <div className="container mx-auto h-full w-full px-2 ">
       <div className="flex flex-col justify-center h-full  z-10 relative overflow-y-clip pt-10">
         <Image
-          src="/proposal-bg.png"
+          src="/tx-body/proposal-bg.png"
           alt="proposal Background"
           fill
           sizes="100vw"

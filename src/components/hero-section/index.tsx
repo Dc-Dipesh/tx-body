@@ -7,33 +7,33 @@ const HeroSection = () => {
   const clients = [
     {
       name: "Polymath",
-      logo: "/clients/polymath.png",
+      logo: "/tx-body/clients/polymath.png",
     },
     {
       name: "Boltshift",
-      logo: "/clients/boltshift.png",
+      logo: "/tx-body/clients/boltshift.png",
     },
     {
       name: "CoreOS",
-      logo: "/clients/coreOs.png",
+      logo: "/tx-body/clients/coreOs.png",
     },
     {
       name: "Layers",
-      logo: "/clients/layers.png",
+      logo: "/tx-body/clients/layers.png",
     },
     {
       name: "Eightball",
-      logo: "/clients/eightball.png",
+      logo: "/tx-body/clients/eightball.png",
     },
     {
       name: "Segment",
-      logo: "/clients/segment.png",
+      logo: "/tx-body/clients/segment.png",
     },
   ];
   return (
     <div className="w-full h-svh relative px-2">
       <div className="w-full aspect-[2/1] relative z-0  mx-auto max-h-1/2">
-        <Image src="/hero-bg.png" alt="Hero Image" fill sizes="100vw" />
+        <Image src="/tx-body/hero-bg.png" alt="Hero Image" fill sizes="100vw" />
       </div>
       <div className="absolute h-full w-full flex flex-col justify-center items-center z-10 inset-0">
         <div className="flex-1"></div>
